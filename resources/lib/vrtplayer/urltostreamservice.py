@@ -61,6 +61,10 @@ class UrlToStreamService:
             vrt_player_token_url = session.post(self._TOKEN_URL, headers={'Content-Type': 'application/json'})
 
             token = vrt_player_token_url.json()['vrtPlayerToken']
+            print("###################################################")
+            print("##############################o#####################")
+            print("##############################ppp#####################")
+            print("got token", token)
 
             url_response = session.get(url);
             strainer = SoupStrainer('div', {'class': 'vrtvideo videoplayer'})

@@ -76,11 +76,11 @@ class VRTPlayer:
         self._kodi_wrapper.show_listing(menu_items, sortmethod.ALPHABET)
 
     def play_vrtnu_video(self, url):
-        stream = self._url_toStream_service.get_stream_from_url(url)
+        stream = self._url_toStream_service.get_stream_from_url(url, self._kodi_wrapper)
         self._kodi_wrapper.play_video(stream)
 
     def play_livestream(self, url):
-        stream = self.url_to_livestream_service.get_stream_from_url(url)
+        stream = self.url_to_livestream_service.get_stream_from_url(url, self._kodi_wrapper)
         self._kodi_wrapper.play_livestream(stream)
 
     def show_livestream_items(self):
